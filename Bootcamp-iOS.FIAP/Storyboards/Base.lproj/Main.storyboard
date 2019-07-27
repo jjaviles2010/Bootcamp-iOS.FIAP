@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -25,6 +26,9 @@
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="ZuZ-SU-dua" kind="show" identifier="jokeSegue" id="xwF-Cx-Uot"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -37,6 +41,38 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3M1-qy-AlB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="589.85507246376812" y="150"/>
+        </scene>
+        <!--Joke View Controller-->
+        <scene sceneID="8hk-Mh-BxC">
+            <objects>
+                <viewController id="ZuZ-SU-dua" customClass="JokeViewController" customModule="Bootcamp_iOS_FIAP" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="GQF-5U-J64">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="flq-R5-IQi">
+                                <rect key="frame" x="20" y="160" width="374" height="682"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="Wju-M4-d9r" firstAttribute="trailing" secondItem="flq-R5-IQi" secondAttribute="trailing" constant="20" id="ER5-yq-zLw"/>
+                            <constraint firstItem="Wju-M4-d9r" firstAttribute="bottom" secondItem="flq-R5-IQi" secondAttribute="bottom" constant="20" id="Ud5-d9-077"/>
+                            <constraint firstItem="flq-R5-IQi" firstAttribute="leading" secondItem="Wju-M4-d9r" secondAttribute="leading" constant="20" id="i90-xe-n5d"/>
+                            <constraint firstItem="flq-R5-IQi" firstAttribute="top" secondItem="Wju-M4-d9r" secondAttribute="top" constant="20" id="zfF-Z8-do8"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Wju-M4-d9r"/>
+                    </view>
+                    <connections>
+                        <outlet property="jokeLabel" destination="flq-R5-IQi" id="Rbp-L9-pOg"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Yy6-S9-Fbx" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1492.753623188406" y="150"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="byM-lw-c68">

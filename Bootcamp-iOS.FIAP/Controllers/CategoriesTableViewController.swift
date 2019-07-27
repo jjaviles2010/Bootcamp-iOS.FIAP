@@ -10,12 +10,13 @@ import UIKit
 
 class CategoriesTableViewController: UITableViewController {
 
-    let categories = ["animal", "dev", "food", "money"]
+    var categories = [String]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setupView()
         setupTableView()
+        requestCategories()
     }
     
     fileprivate func setupView() {
@@ -23,12 +24,28 @@ class CategoriesTableViewController: UITableViewController {
     }
     
     fileprivate func setupTableView() {
+        tableView.tableFooterView = UIView()
+        
         tableView.register(
             UINib(nibName: String(describing: CategoryTableViewCell.self), bundle: nil),
             forCellReuseIdentifier: CategoryTableViewCell.identifier
         )
     }
 
+    fileprivate func requestCategories() {
+        let networkingProvider = NetworkProider()
+        
+        networkingProvider.request(Constants.categoriesUrl) {
+            (result: Result<[String], NetworkError>) in
+            if case .success(let categories) = result {
+                self.categories = categories
+                DispatchQueue.main.async {
+                    self.tableView.reloadData()
+                }
+            }
+        }
+    }
+    
     override func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
@@ -47,7 +64,19 @@ class CategoriesTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        performSegue(withIdentifier: "jokeSegue", sender: nil)
         tableView.deselectRow(at: indexPath, animated: true)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard
+            let destination = segue.destination as? JokeViewController,
+            let selectedRow = tableView.indexPathForSelectedRow?.row
+        else { return }
+        
+        let selectedCategory = categories[selectedRow]
+        
+        destination.category = selectedCategory
     }
     
 }

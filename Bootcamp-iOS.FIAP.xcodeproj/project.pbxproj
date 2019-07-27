@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8226ACE522EC8AAF00177186 /* NetworkingProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8226ACE422EC8AAF00177186 /* NetworkingProvider.swift */; };
+		8226ACE922EC986800177186 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8226ACE822EC986800177186 /* Constants.swift */; };
+		8226ACEC22EC9A4500177186 /* Joke.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8226ACEB22EC9A4500177186 /* Joke.swift */; };
+		8226ACEE22EC9CD800177186 /* JokeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8226ACED22EC9CD800177186 /* JokeViewController.swift */; };
 		FD1AB90122DAB4D900D78324 /* CategoriesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD1AB90022DAB4D900D78324 /* CategoriesTableViewController.swift */; };
 		FD1AB90522DAB61000D78324 /* CategoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD1AB90322DAB61000D78324 /* CategoryTableViewCell.swift */; };
 		FD1AB90622DAB61000D78324 /* CategoryTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FD1AB90422DAB61000D78324 /* CategoryTableViewCell.xib */; };
@@ -17,6 +21,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		8226ACE422EC8AAF00177186 /* NetworkingProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkingProvider.swift; sourceTree = "<group>"; };
+		8226ACE822EC986800177186 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		8226ACEB22EC9A4500177186 /* Joke.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Joke.swift; sourceTree = "<group>"; };
+		8226ACED22EC9CD800177186 /* JokeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JokeViewController.swift; sourceTree = "<group>"; };
 		FD1AB90022DAB4D900D78324 /* CategoriesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesTableViewController.swift; sourceTree = "<group>"; };
 		FD1AB90322DAB61000D78324 /* CategoryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryTableViewCell.swift; sourceTree = "<group>"; };
 		FD1AB90422DAB61000D78324 /* CategoryTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CategoryTableViewCell.xib; sourceTree = "<group>"; };
@@ -39,6 +47,46 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8226ACE222EC8A8400177186 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				8226ACE322EC8A8D00177186 /* Networking */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		8226ACE322EC8A8D00177186 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				8226ACE422EC8AAF00177186 /* NetworkingProvider.swift */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		8226ACE622EC983E00177186 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				8226ACE722EC985000177186 /* Definitions */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		8226ACE722EC985000177186 /* Definitions */ = {
+			isa = PBXGroup;
+			children = (
+				8226ACE822EC986800177186 /* Constants.swift */,
+			);
+			path = Definitions;
+			sourceTree = "<group>";
+		};
+		8226ACEA22EC9A2F00177186 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				8226ACEB22EC9A4500177186 /* Joke.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		FD1AB8FD22DAB45D00D78324 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
@@ -63,6 +111,7 @@
 			children = (
 				FD1AB90222DAB5EE00D78324 /* Cells */,
 				FD1AB90022DAB4D900D78324 /* CategoriesTableViewController.swift */,
+				8226ACED22EC9CD800177186 /* JokeViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -74,28 +123,6 @@
 				FD1AB90422DAB61000D78324 /* CategoryTableViewCell.xib */,
 			);
 			path = Cells;
-			sourceTree = "<group>";
-		};
-		FD1AB90722DAB91900D78324 /* Models */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Models;
-			sourceTree = "<group>";
-		};
-		FD1AB90822DAB92D00D78324 /* Services */ = {
-			isa = PBXGroup;
-			children = (
-				FD1AB90922DAB93700D78324 /* Networking */,
-			);
-			path = Services;
-			sourceTree = "<group>";
-		};
-		FD1AB90922DAB93700D78324 /* Networking */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Networking;
 			sourceTree = "<group>";
 		};
 		FDE785C622DA1C9700E7DCFB = {
@@ -117,11 +144,12 @@
 		FDE785D122DA1C9700E7DCFB /* Bootcamp-iOS.FIAP */ = {
 			isa = PBXGroup;
 			children = (
+				8226ACEA22EC9A2F00177186 /* Models */,
+				8226ACE622EC983E00177186 /* Resources */,
+				8226ACE222EC8A8400177186 /* Services */,
 				FD1AB8FD22DAB45D00D78324 /* Supporting Files */,
 				FD1AB8FE22DAB4A400D78324 /* Storyboards */,
 				FD1AB8FF22DAB4C100D78324 /* Controllers */,
-				FD1AB90722DAB91900D78324 /* Models */,
-				FD1AB90822DAB92D00D78324 /* Services */,
 			);
 			path = "Bootcamp-iOS.FIAP";
 			sourceTree = "<group>";
@@ -198,8 +226,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8226ACE922EC986800177186 /* Constants.swift in Sources */,
+				8226ACEE22EC9CD800177186 /* JokeViewController.swift in Sources */,
 				FDE785D322DA1C9700E7DCFB /* AppDelegate.swift in Sources */,
+				8226ACEC22EC9A4500177186 /* Joke.swift in Sources */,
 				FD1AB90122DAB4D900D78324 /* CategoriesTableViewController.swift in Sources */,
+				8226ACE522EC8AAF00177186 /* NetworkingProvider.swift in Sources */,
 				FD1AB90522DAB61000D78324 /* CategoryTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
